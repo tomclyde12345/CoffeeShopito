@@ -1,0 +1,33 @@
+﻿@model CoffeeShop.ViewModel.CustomerViewModel
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer Form</h2>
+@using (Html.BeginForm("Save", "Customer"))
+{
+    <div class="form-group">
+        @Html.LabelFor(d => d.CustomerModel.Name)
+        @Html.TextBoxFor(d => d.CustomerModel.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(d => d.CustomerModel.Address)
+        @Html.TextBoxFor(d => d.CustomerModel.Address, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(d => d.CustomerModel.age)
+        @Html.TextBoxFor(d => d.CustomerModel.age, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(d => d.CustomerModel.EmailAddress)
+        @Html.TextBoxFor(d => d.CustomerModel.EmailAddress, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(d => d.CustomerModel.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+
